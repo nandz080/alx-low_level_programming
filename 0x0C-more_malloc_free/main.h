@@ -9,5 +9,63 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 int _putchar(char c);
 
 
+/**
+ * error_exit - function that prints error with _putchar and exits w/ 98.
+ *
+ *
+ * Return: Error 98 and exit(98)
+*/
+
+int error_exit(void)
+{
+	char *err;
+	int i;
+
+	err = "Error";
+	for (i = 0; err[i] != '\0'; i++)
+		_putchar(err[i]);
+	_putchar('\n');
+	return(98);
+}
+
+/**
+ * check_number - function that checks if string has only numbers
+ *
+ *
+ * @str: string to check
+ *
+ * Return: 0 is true 1 if false
+*/
+
+int check_number(char *str)
+{
+	while (*str != '\0')
+	{
+		if (*str < '0' || *str > '9')
+			return (1);
+		str++;
+	}
+	return (0);
+}
+
+/**
+ * _length - function returns the length of strings
+ *
+ * @str: string to get length of
+ *
+ * Return: length of string
+*/
+
+int _length(char *str)
+{
+	int i = 0;
+
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+
+
 
 #endif
